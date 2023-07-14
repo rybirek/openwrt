@@ -53,7 +53,15 @@ define Device/mikrotik_hap-ac3-lte6-kit
         SOC := qcom-ipq4019
         DEVICE_PACKAGES := kmod-ledtrig-gpio kmod-usb-acm kmod-usb-net-rndis
 endef
-TARGET_DEVICES += mikrotik_hap-ac3-lte6-kit
+TARGET_DEVICES += mikrotik_chateau-lte12
+
+define Device/mikrotik_chateau-lte12
+        $(call Device/mikrotik_nor)
+        DEVICE_MODEL := Chateau LTE12
+        SOC := qcom-ipq4019
+        DEVICE_PACKAGES := kmod-ledtrig-gpio
+endef
+TARGET_DEVICES += mikrotik_chateau-lte12
 
 define Device/mikrotik_lhgg-60ad
 	$(call Device/mikrotik_nor)
