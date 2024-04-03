@@ -444,7 +444,8 @@ define Build/kernel-bin
 endef
 
 define Build/kernel-pack-npk
-	sh -c 'source $(STAGING_DIR_HOST)/share/npkpy-venv/bin/activate; python $(STAGING_DIR_HOST)/share/npkpy-venv/bin/pack_npk_kernel.py --kernel $@ --output $@.npk'
+	#sh -c 'source $(STAGING_DIR_HOST)/share/npkpy-venv/bin/activate; python $(STAGING_DIR_HOST)/share/npkpy-venv/bin/pack_npk_kernel.py --kernel $@ --output $@.npk'
+	sh -c 'python3 $(STAGING_DIR_HOST)/share/npkpy-venv/bin/pack_npk_kernel.py --kernel $@ --output $@.npk'
 	mv $@.npk $@
 endef
 
